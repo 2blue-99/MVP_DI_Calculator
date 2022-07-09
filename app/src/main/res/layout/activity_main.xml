@@ -15,7 +15,6 @@
         android:layout_marginStart="178dp"
         android:layout_marginTop="60dp"
         android:layout_marginEnd="176dp"
-        android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
@@ -85,6 +84,7 @@
             android:textColor="#E91E63"
             android:textSize="35sp"
             android:textStyle="bold"
+            android:onClick="onClickOperation"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -106,6 +106,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
+            android:onClick="onClickOperation"
             android:id="@+id/mock"
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -121,6 +122,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
+            android:onClick="onClickOperation"
             android:id="@+id/devision"
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -158,6 +160,7 @@
             android:layout_margin="7dp"
             android:background="@drawable/shape_for_circle_button"
             android:text="7"
+            android:onClick="onClickData"
             android:textColor="#70422A"
             android:textSize="35sp"
             android:textStyle="bold"
@@ -173,6 +176,7 @@
             android:layout_margin="7dp"
             android:background="@drawable/shape_for_circle_button"
             android:text="8"
+            android:onClick="onClickData"
             android:textColor="#70422A"
             android:textSize="35sp"
             android:textStyle="bold"
@@ -182,6 +186,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
+            android:onClick="onClickData"
             android:id="@+id/nine"
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -197,6 +202,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
+            android:onClick="onClickOperation"
             android:id="@+id/multi"
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -228,6 +234,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <Button
+            android:onClick="onClickData"
             android:id="@+id/four"
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -243,6 +250,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
+            android:onClick="onClickData"
             android:id="@+id/five"
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -258,6 +266,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
+            android:onClick="onClickData"
             android:id="@+id/six"
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -273,6 +282,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
+            android:onClick="onClickOperation"
             android:id="@+id/minus"
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -304,6 +314,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <Button
+            android:onClick="onClickData"
             android:id="@+id/one"
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -319,6 +330,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
+            android:onClick="onClickData"
             android:id="@+id/two"
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -334,6 +346,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
+            android:onClick="onClickData"
             android:id="@+id/three"
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -349,6 +362,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
+            android:onClick="onClickOperation"
             android:id="@+id/plus"
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -380,6 +394,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <Button
+            android:onClick="onClickData"
             android:id="@+id/no"
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -395,6 +410,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
+            android:onClick="onClickData"
             android:id="@+id/zero"
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -410,6 +426,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
+            android:onClick="onClickData"
             android:id="@+id/dot"
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -425,6 +442,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
+            android:onClick="onClickOperation"
             android:id="@+id/result"
             android:layout_width="80dp"
             android:layout_height="80dp"

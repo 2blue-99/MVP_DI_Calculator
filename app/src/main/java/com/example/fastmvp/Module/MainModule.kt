@@ -1,20 +1,28 @@
 package com.example.fastmvp.Module
 
-import android.content.SharedPreferences
-import com.example.fastmvp.contract.MainContract
-import java.util.prefs.Preferences
-import kotlin.coroutines.coroutineContext
-private lateinit var getPreferences: SharedPreferences
-private lateinit var getSharedPreferences: SharedPreferences
-private lateinit var editor: SharedPreferences.Editor
+import android.content.Context
+import android.util.Log
+import androidx.core.content.edit
+import com.example.fastmvp.contract.SharedpreferenceModule
+import javax.inject.Inject
 
-class MainModule : MainContract.Module {
+class MainModule @Inject constructor(
+    private val context: Context
+): SharedpreferenceModule {
+
+    private val sharedPreferences = context.getSharedPreferences("file_key", Context.MODE_PRIVATE)
+
+    @Synchronized
     override fun save(result : String) {
-//        SharedPreferences prefs = getPreference(context)
+        Log.e(javaClass.simpleName, "save: $result", )
+        sharedPreferences.edit(false) {
+            putString("lastest_value", result)
+        }
     }
 
     override fun get(): String {
-        TODO("Not yet implemented")
+        Log.e(javaClass.simpleName, "get:", )
+        return sharedPreferences.getString("lastest_value", "") ?: ""
     }
 
 }

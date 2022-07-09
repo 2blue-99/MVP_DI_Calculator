@@ -1,28 +1,25 @@
 package com.example.fastmvp
 
 import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
+import com.example.fastmvp.Module.MainModule
 import com.example.fastmvp.contract.MainContract
 import com.example.fastmvp.databinding.ActivityMainBinding
 import com.example.fastmvp.presenter.MainPresenter
-//import dagger.hilt.android.AndroidEntryPoint
-//import javax.inject.Inject
-import kotlinx.android.synthetic.main.activity_main.*
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
-//@AndroidEntryPoint
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity(), MainContract.View {
 
     private var mainBinding: ActivityMainBinding? = null
     private val b get() = mainBinding!!
 
-
-    //    @Inject
-//    lateinit var presenter: MainPresenter
-    private lateinit var presenter: MainPresenter
+    @Inject lateinit var presenter: MainPresenter
+//    private lateinit var presenter: MainPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,11 +29,13 @@ class MainActivity : AppCompatActivity(), MainContract.View {
     }
 
     override fun init() {
-        presenter = MainPresenter()
+//        presenter = MainPresenter()
+        b.textView3.text = presenter.updateView()
     }
 
     @SuppressLint("SetTextI18n")
     override fun numberButtonClick(buttonId: String) {
+        Log.e(javaClass.simpleName, "numberButtonClick: $presenter" )
         if (presenter.operator == "") { // number1 은 끝난 단 소리
             when (buttonId) {
                 b.nine.id.toString() -> {
@@ -173,9 +172,8 @@ class MainActivity : AppCompatActivity(), MainContract.View {
 
             }
             "=" -> {
-                b.textView3.text = presenter.performCalculate()
-                presenter.number2=""
-                presenter.operator=""
+                presenter.performCalculate()
+                b.textView3.text = presenter.updateView()
                 presenter.saveLastResult()
             }
             "C" -> {

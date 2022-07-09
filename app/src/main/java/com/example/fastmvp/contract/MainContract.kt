@@ -14,15 +14,12 @@ interface MainContract {
 
     //View 를 통해서 Presenter 가 해야 할 일
     interface Presenter {
-        fun performCalculate(): String
+        fun performCalculate()
         fun saveLastResult()
         fun readLastResult()
         fun updateView(): String
         fun init()
     }
 
-    interface Module {
-        fun save(result:String)
-        fun get(): String
-    }
+
 }
