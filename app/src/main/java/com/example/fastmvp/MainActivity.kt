@@ -19,7 +19,6 @@ class MainActivity : AppCompatActivity(), MainContract.View {
     private val b get() = mainBinding!!
 
     @Inject lateinit var presenter: MainPresenter
-//    private lateinit var presenter: MainPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +28,7 @@ class MainActivity : AppCompatActivity(), MainContract.View {
     }
 
     override fun init() {
-//        presenter = MainPresenter()
+        println("   mainActivity init   ")
         b.textView3.text = presenter.updateView()
     }
 
@@ -146,12 +145,10 @@ class MainActivity : AppCompatActivity(), MainContract.View {
 
     @SuppressLint("SetTextI18n")
     override fun operationButtonClick(symbol: String) {
-        println("@@@@@@@@@@@@@@@ $symbol")
         when (symbol) {
             "+" -> {
                 presenter.operator = "+"
                 b.textView3.text = presenter.updateView()
-//                Log.e(javaClass.simpleName, "operationButtonClick: ${presenter.number1}", )
             }
             "-" -> {
                 presenter.operator = "-"

@@ -8,16 +8,16 @@ import com.example.fastmvp.contract.SharedpreferenceModule
 import javax.inject.Inject
 
 //추상화는
-class MainPresenter @Inject constructor(
-    private val module: SharedpreferenceModule
+class MainPresenter @Inject constructor( //constructor가 무슨역할??
+    private val module: SharedpreferenceModule // 이걸 통해서 쉐얼드프리퍼렌스모듈 사용하는게 맞나
 ) : MainContract.Presenter {
 
     var number1: String = ""
     var number2: String = ""
     var operator: String = ""
-    var result: String = ""
 
     init {
+        println("   mainPresenter init   ")
         readLastResult()
     }
 
@@ -30,7 +30,6 @@ class MainPresenter @Inject constructor(
         if (num1 != null && num2 != null) {
             when (operator) {
                 "+" -> {
-//                    result = ((num1 + num2).toInt()).toString()
                     number1 = (num1 + num2).toString()
                     number2 = ""
                     operator = ""
@@ -65,6 +64,7 @@ class MainPresenter @Inject constructor(
     }
 
     override fun readLastResult() {
+        println("   Mainpresenter readLastresult   ")
         number1 = module.get()
         Log.e(javaClass.simpleName, "readLastResult: $number1", )
     }
